@@ -41,7 +41,7 @@
                     </div>
                 </div>
                 
-                <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -50,15 +50,15 @@
                         </div>
                         <div class="modal-body">
                             <div class="input-group p-4">
-                                <input type="text" class="form-control" placeholder="Enter task " name="title" [(ngModel)]="editTaskValue">
-                        <input type="text" class="form-control" placeholder="Enter description " name="description" [(ngModel)]="editTaskValue">
-                        <input type="text" class="form-control" placeholder="Enter author " name="author" [(ngModel)]="editTaskValue">
-                                <button class="btn btn-outline-success" type="button" data-bs-dismiss="modal" (click)="editTask()">Update</button>
+                                <input type="text" class="form-control" placeholder="Enter task " name="title" [(ngModel)]="taskObj.tittle">
+                                <input type="text" class="form-control" placeholder="Enter description " name="description" [(ngModel)]="taskObj.description">
+                                <input type="text" class="form-control" placeholder="Enter author " name="author" [(ngModel)]="taskObj.author">
+                                <button class="btn btn-outline-success" type="button" data-bs-dismiss="modal" (click)="editTask(taskObj, taskObj.id)">Update</button>
                             </div>
                         </div>
                     </div>
                     </div>
-                </div> -->
+                </div>
 
             </div>
             <div class="col"></div>

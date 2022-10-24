@@ -36,7 +36,7 @@ export class DashboardComponent implements OnInit {
     });
   }
 
-  addTask(task: any) {
+  addTask(task: createTask) {
     const { tittle, description, author } = task 
     const newTask = {
       tittle: tittle,
@@ -51,11 +51,16 @@ export class DashboardComponent implements OnInit {
     })
   }
 
-  editTask() {
-    this.taskObj.tittle = this.editTaskValue;
-    this.taskObj.description= this.addTaskValue;
-    this.taskObj.author= this.addTaskValue;
-    this.crudService.editTask(this.taskObj).subscribe(res => {
+  editTask(task: createTask, id: string) {
+    const { tittle, description, author } = task 
+    const newTask = {
+      tittle: tittle,
+      description: description,
+      author: author
+    };
+
+
+    this.crudService.editTask(id, newTask).subscribe(res => {
       this.ngOnInit();
     }, err=> {
       alert("Failed to update task");
